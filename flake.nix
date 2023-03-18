@@ -16,11 +16,12 @@
       perSystem = { self', pkgs, lib, config, system, ... }: {
         packages.idris2_jvm = with pkgs; stdenv.mkDerivation {
             name = "idris-jvm";
+            version = "0.6.0.2";
             depsBuildBuild = [ wget makeWrapper ];
             propagatedNativeBuildInputs = [ jdk17_headless ];
             src = pkgs.fetchzip {
-              url = "https://github.com/mmhelloworld/idris-jvm/releases/download/latest/idris2-0.6.0.zip";
-              sha256 = "sha256-xJg1EkcLg3y70OhROBOR9yPl4MnluqpeEJpHJf2mnBA=";
+              url = "https://github.com/mmhelloworld/idris-jvm/releases/download/latest/idris2-0.6.0.2.zip";
+              sha256 = "sha256-fULm+KPSi/7ou4GXfO4U7DTOJB1oKTYGohjrYrb9FwU=";
             };
             installPhase = ''
               cp -r . $out/
